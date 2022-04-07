@@ -12,7 +12,7 @@ node {
     sh '${root} test -cover'
 
     stage 'Build'
-    sh '${root} build .'
+    sh '/home/user/go/bin/go build .'
 
     stage 'deploy'
 }
