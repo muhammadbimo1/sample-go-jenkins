@@ -1,6 +1,6 @@
 node {
     //ensure the go is installed
-    def root = 'home/user/go/bin/go'
+    def root = '/home/user/go/bin/go'
 
     stage 'Checkout'
     git url: 'https://github.com/muhammadbimo1/sample-go-jenkins.git'
