@@ -9,10 +9,10 @@ node {
     sh '/home/user/go/bin/go version'
 
     stage 'test'
-    sh '${root} go test -cover'
+    sh '${root} test -cover'
 
     stage 'Build'
-    sh '${root} go build .'
+    sh '${root} build .'
 
     stage 'deploy'
 }
