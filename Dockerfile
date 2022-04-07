@@ -8,6 +8,6 @@ COPY . .
 
 RUN go mod tidy
 
-RUN  go build -o golang-example
+RUN  go build -o sample-go-jenkins
 
-ENTRYPOINT "/app/golang-example"
+ENTRYPOINT "/app/sample-go-jenkins"

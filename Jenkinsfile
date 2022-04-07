@@ -30,7 +30,7 @@ pipeline {
 
     stage('Build'){
         steps{
-            sh 'docker container run --name jenkins-go -p 8081:8081'
+            sh 'sudo docker build -t "go-jenkins:latest" .'
         }
     }
     }
