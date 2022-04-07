@@ -30,7 +30,7 @@ pipeline {
 
     stage('Build'){
         steps{
-            sh 'sudo docker build -t "go-jenkins:latest" .'
+            sh 'docker build -t "go-jenkins:latest" .'
         }
     }
     }
