@@ -1,18 +1,43 @@
-node {
-    //ensure the go is installed
-    def root = '/home/user/go/bin/go'
+pipeline {
+    agent any
+    environment {
+        root= '/home/user/go/bin/go'
+    }
+    stages {
+            stage('Checkout'){
+                steps{
+                    git url: 'https://github.com/muhammadbimo1/sample-go-jenkins.git'
 
-    stage 'Checkout'
-    git url: 'https://github.com/muhammadbimo1/sample-go-jenkins.git'
+                }
 
-    stage 'preTest'
-    sh '/home/user/go/bin/go version'
+            }
 
-    stage 'test'
-    sh '${root} test -cover'
 
-    stage 'Build'
-    sh '/home/user/go/bin/go build .'
+    stage("pretest"){
+        steps{
+            sh '/home/user/go/bin/go version'
+        }
 
-    stage 'deploy'
+    }
+
+    stage('test'){
+        steps {
+            sh '${root} test -cover'
+        }
+
+    }
+
+
+    stage('Build'){
+        steps{
+            sh '/home/user/go/bin/go build .'
+        }
+
+    }
+
+
+    stage('deploy'){
+
+    }
+    }
 }
