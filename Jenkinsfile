@@ -30,9 +30,8 @@ pipeline {
 
     stage('Build'){
         steps{
-            sh '/home/user/go/bin/go build .'
+            sh 'docker container run --name jenkins-go -p 8081:8081'
         }
-
     }
     }
 }
