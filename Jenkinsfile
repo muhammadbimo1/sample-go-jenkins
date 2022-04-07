@@ -6,13 +6,13 @@ node {
     git url: 'https://github.com/muhammadbimo1/sample-go-jenkins.git'
 
     stage 'preTest'
-    sh '${root} version'
+    sh '${root} go version'
 
     stage 'test'
-    sh '${root} test -cover'
+    sh '${root} go test -cover'
 
     stage 'Build'
-    sh '${root} build .'
+    sh '${root} go build .'
 
     stage 'deploy'
 }
