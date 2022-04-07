@@ -1,9 +1,8 @@
 node {
     //ensure the go is installed
-    def root = tool type:'go', name: 'Go 1.17'
+    def root = 'home/user/go/bin/go'
 
     //export env variable
-    withEnv(["GOROOT=${root}","PATH+GO=${root}/bin"]) {
         stage 'Checkout'
         git url: 'https://github.com/muhammadbimo1/sample-go-jenkins.git'
 
@@ -17,5 +16,4 @@ node {
         sh 'go build .'
 
         stage 'deploy'
-    }
 }
