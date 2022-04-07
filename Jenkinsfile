@@ -1,6 +1,6 @@
 node {
     //ensure the go is installed
-    def root = tool type:'go' name: 'Go 1.17'
+    def root = tool type:'go', name: 'Go 1.17'
 
     //export env variable
     withEnv(["GOROOT=${root}","PATH+GO=${root}/bin"]) {
